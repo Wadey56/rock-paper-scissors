@@ -19,3 +19,16 @@ function getComputerChoice() {
     return computerChoice;
 
 }
+
+function getHumanChoice() {
+
+    let humanChoice = prompt("Rock, Paper or Scissors?");
+    humanChoice = humanChoice.toLowerCase();
+
+    if ((humanChoice != "rock") && (humanChoice != "paper") && (humanChoice != "scissors")) {
+        return getHumanChoice();
+    } else {
+        return humanChoice;
+    }
+
+}
