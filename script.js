@@ -1,3 +1,6 @@
+let computerScore = 0;
+let humanScore = 0;
+
 function getComputerChoice() {
 
     // get a random number between 1 and 3
