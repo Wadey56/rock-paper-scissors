@@ -60,3 +60,7 @@ function playRound(computerChoice, humanChoice) {
     }
 
 }
+
+let computerChoice = getComputerChoice();
+let humanChoice = getHumanChoice();
+playRound(computerChoice, humanChoice);
