@@ -7,13 +7,13 @@ function getComputerChoice() {
     // convert number to game option
     switch (randomNumber) {
         case 1:
-            computerChoice = "Rock";
+            computerChoice = "rock";
             break;
         case 2:
-            computerChoice = "Paper";
+            computerChoice = "paper";
             break;
         case 3:
-            computerChoice = "Scissors"
+            computerChoice = "scissors"
             break;
     }
 
@@ -56,7 +56,7 @@ function playGame() {
             (humanChoice == "paper" && computerChoice == "rock") ||
             (humanChoice == "scissors" && computerChoice == "paper")
         ) {
-            console.log(`The computer wins, ${humanChoice} beats ${computerChoice}`);
+            console.log(`You win, ${humanChoice} beats ${computerChoice}`);
             humanScore++;
         }
     
@@ -66,8 +66,6 @@ function playGame() {
         let computerChoice = getComputerChoice();
         let humanChoice = getHumanChoice();
         playRound(computerChoice, humanChoice);
-        console.log(humanScore);
-        console.log(computerScore);
     }
 
 }
