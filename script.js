@@ -37,11 +37,14 @@ function getHumanChoice() {
 }
 
 function playGame() {
+
+    // declare score variables before use in playRound()
     let computerScore = 0;
     let humanScore = 0;
 
     function playRound(computerChoice, humanChoice) {
     
+        // compare choices to determine winner
         if (computerChoice == humanChoice) {
             console.log(`It's a draw ${computerChoice} matches ${humanChoice}`);
         } else if (
@@ -62,12 +65,14 @@ function playGame() {
     
     }
 
+    // loop 5x to refresh both computer and human choices and pass to playRound()
     for (let i = 0; i < 5; i++) {
         let computerChoice = getComputerChoice();
         let humanChoice = getHumanChoice();
         playRound(computerChoice, humanChoice);
     }
 
+    // display final scoring message
     if (computerScore == humanScore) {
         console.log(`It's a draw with ${computerScore} points each!`)
     } else if (computerScore > humanScore) {
@@ -78,4 +83,5 @@ function playGame() {
 
 }
 
+// initiate game loop automatically
 playGame()
