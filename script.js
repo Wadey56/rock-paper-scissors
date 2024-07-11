@@ -1,6 +1,3 @@
-let computerScore = 0;
-let humanScore = 0;
-
 function getComputerChoice() {
 
     // get a random number between 1 and 3
@@ -63,4 +60,13 @@ function playRound(computerChoice, humanChoice) {
 
 let computerChoice = getComputerChoice();
 let humanChoice = getHumanChoice();
-playRound(computerChoice, humanChoice);
+
+function playGame() {
+    let computerScore = 0;
+    let humanScore = 0;
+
+    for (let i = 0; i < 4; i++) {
+        playRound(getComputerChoice(), getHumanChoice());
+    }
+
+}
