@@ -68,6 +68,14 @@ function playGame() {
         playRound(computerChoice, humanChoice);
     }
 
+    if (computerScore == humanScore) {
+        console.log(`It's a draw with ${computerScore} points each!`)
+    } else if (computerScore > humanScore) {
+        console.log(`Computer wins with ${computerScore} points against your ${humanScore}`)
+    } else {
+        console.log(`You win with ${humanScore} against the computer's ${computerScore}`)
+    }
+
 }
 
 playGame()
