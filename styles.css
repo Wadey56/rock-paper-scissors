@@ -1,0 +1,26 @@
+body {
+    background-color: aliceblue;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+}
+
+button {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+}
+
+#results {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+}
