@@ -28,42 +28,30 @@ function playRound(computerChoice, humanChoice) {
 
     // display final scoring message
     if (computerScore == 5) {
-        console.log(`Computer wins with ${computerScore} points against your ${humanScore}`);
+        results.textContent = `Computer wins with ${computerScore} points against your ${humanScore}`;
         return;
     } else if (humanScore == 5) {
-        console.log(`You win with ${humanScore} against the computer's ${computerScore}`);
+        results.textContent = `You win with ${humanScore} points against the computer's ${computerScore}`
         return;
     }
     
     // compare choices to determine winner
     if (computerChoice == humanChoice) {
-        console.log(`It's a draw ${computerChoice} matches ${humanChoice}`);
+        results.textContent = `It's a draw ${computerChoice} matches ${humanChoice}`; 
     } else if (
         (computerChoice == "rock" && humanChoice == "scissors") ||
         (computerChoice == "paper" && humanChoice == "rock") ||
         (computerChoice == "scissors" && humanChoice == "paper")
     ) {
-        console.log(`The computer wins, ${computerChoice} beats ${humanChoice}`);
+        results.textContent = `The computer wins, ${computerChoice} beats ${humanChoice}`;
         computerScore++;
     } else if (
         (humanChoice == "rock" && computerChoice == "scissors") ||
         (humanChoice == "paper" && computerChoice == "rock") ||
         (humanChoice == "scissors" && computerChoice == "paper")
     ) {
-        console.log(`You win, ${humanChoice} beats ${computerChoice}`);
+        results.textContent = `You win, ${humanChoice} beats ${computerChoice}`;
         humanScore++;
-    }
-
-}
-
-
-function playGame() {
-
-    // loop 5x to refresh both computer and human choices and pass to playRound()
-    for (let i = 0; i < 5; i++) {
-        let computerChoice = getComputerChoice();
-        let humanChoice = getHumanChoice();
-        playRound(computerChoice, humanChoice);
     }
 
 }
@@ -74,3 +62,5 @@ buttons.forEach(btn => {
         playRound(getComputerChoice(), btn.value)
     })
 })
+
+const results = document.querySelector("#results");
