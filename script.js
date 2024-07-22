@@ -64,3 +64,10 @@ buttons.forEach(btn => {
 })
 
 const results = document.querySelector("#results");
+
+const reset = document.querySelector("#reset")
+reset.addEventListener("click", () => {
+    computerScore = 0;
+    humanScore = 0;
+    results.textContent = "Welcome to Rock, Paper, Scissors!"
+})

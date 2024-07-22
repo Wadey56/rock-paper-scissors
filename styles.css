@@ -20,6 +20,11 @@ button {
     font-size: 25px;
 }
 
+#reset {
+    width: 300px;
+    margin: auto;
+}
+
 #results {
     font-family: 'Courier New', Courier, monospace;
     font-size: 30px;
