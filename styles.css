@@ -25,7 +25,8 @@ button {
     margin: auto;
 }
 
-#results {
+#results, #scoring {
     font-family: 'Courier New', Courier, monospace;
     font-size: 30px;
+    align-content: center;
 }

@@ -27,11 +27,7 @@ function getComputerChoice() {
 function playRound(computerChoice, humanChoice) {
 
     // display final scoring message
-    if (computerScore == 5) {
-        results.textContent = `Computer wins with ${computerScore} points against your ${humanScore}`;
-        return;
-    } else if (humanScore == 5) {
-        results.textContent = `You win with ${humanScore} points against the computer's ${computerScore}`
+    if (checkWin(computerScore, humanScore) != false) {
         return;
     }
     
@@ -45,6 +41,7 @@ function playRound(computerChoice, humanChoice) {
     ) {
         results.textContent = `The computer wins, ${computerChoice} beats ${humanChoice}`;
         computerScore++;
+        scoring.textContent = `Computer Score: ${computerScore} Your Score: ${humanScore}`;
     } else if (
         (humanChoice == "rock" && computerChoice == "scissors") ||
         (humanChoice == "paper" && computerChoice == "rock") ||
@@ -52,6 +49,11 @@ function playRound(computerChoice, humanChoice) {
     ) {
         results.textContent = `You win, ${humanChoice} beats ${computerChoice}`;
         humanScore++;
+        scoring.textContent = `Computer Score: ${computerScore} Your Score: ${humanScore}`;
+    }
+
+    if (checkWin(computerScore, humanScore) != false) {
+        return;
     }
 
 }
@@ -59,15 +61,30 @@ function playRound(computerChoice, humanChoice) {
 const buttons = document.querySelectorAll("button");
 buttons.forEach(btn => {
     btn.addEventListener("click", () => {
-        playRound(getComputerChoice(), btn.value)
+        playRound(getComputerChoice(), btn.value);
     })
 })
 
 const results = document.querySelector("#results");
+const scoring = document.querySelector("#scoring");
+const buttonContainer = document.querySelector("#btnContainer");
 
 const reset = document.querySelector("#reset")
 reset.addEventListener("click", () => {
     computerScore = 0;
     humanScore = 0;
-    results.textContent = "Welcome to Rock, Paper, Scissors!"
+    results.textContent = "Welcome to Rock, Paper, Scissors!";
+    scoring.textContent = `Computer Score: ${computerScore} Your Score: ${humanScore}`;
 })
+
+function checkWin(computerScore, humanScore) {
+    if (computerScore == 5) {
+        results.textContent = `Computer wins with ${computerScore} points against your ${humanScore}`;
+        return;
+    } else if (humanScore == 5) {
+        results.textContent = `You win with ${humanScore} points against the computer's ${computerScore}`;
+        return;
+    } else {
+        return false;
+    }
+}
